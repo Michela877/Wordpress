@@ -31,12 +31,27 @@ kubectl apply -k "path assoluto in locale"
 
 ## 3️⃣ credenziali per accedere
 
-le credenziali base per accedere sono 
+Bisognera cambiare la password tramite pod mysql 
+```bash
+kubectl exec -it mysql-deployment-6f49d8d57d-srgzq -n monitoring -- bash
+```
+Entrare nel mysql 
+```bash
+mysql -u root -prootpassword
+```
+```bash
+use wordpress;
+```
+```bash
+UPDATE wp_users 
+SET user_pass = MD5('nuovapassword') 
+WHERE user_login = 'user';
+```
+le credenziali base per accedere sono al wp-admin 
 
 id user
+password nuovapassword
 
-la password da cambiare internalmente al pod mysql
-
-una volta eseguito l'accesso e cambiato la password si avra tutto lo stack grafana configurato
+una volta eseguito l'accesso e cambiato la password si avra tutto il sito wordpress configurato
 
 
