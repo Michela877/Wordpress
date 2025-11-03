@@ -23,7 +23,7 @@ kubectl create ns wordpress
 
 ## 2️⃣ Creazione dei singoli con kustomize
 
-ma prima bisognera configurare il service con il load balancer o senno l'ingress successivamente avviare l'installazione con quest'ordine di creazione usando kustomize "GRAFANA-METRICS-PROMETHEUS-LOKI-PROMTAIL-TEMPO" qui sotto il comando:
+ma prima bisognera configurare il service con il load balancer o senno l'ingress successivamente avviare l'installazione con quest'ordine di creazione usando kustomize qui sotto il comando:
 
 ```bash
 kubectl apply -k "path assoluto in locale"
